@@ -1,0 +1,1556 @@
+student@j-hp:~/422161$ cat>number.txt
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+^C
+student@j-hp:~/422161$ cat number.txt 
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+student@j-hp:~/422161$ pr --help
+Usage: pr [OPTION]... [FILE]...
+Paginate or columnate FILE(s) for printing.
+
+With no FILE, or when FILE is -, read standard input.
+
+Mandatory arguments to long options are mandatory for short options too.
+  +FIRST_PAGE[:LAST_PAGE], --pages=FIRST_PAGE[:LAST_PAGE]
+                    begin [stop] printing with page FIRST_[LAST_]PAGE
+  -COLUMN, --columns=COLUMN
+                    output COLUMN columns and print columns down,
+                    unless -a is used. Balance number of lines in the
+                    columns on each page
+  -a, --across      print columns across rather than down, used together
+                    with -COLUMN
+  -c, --show-control-chars
+                    use hat notation (^G) and octal backslash notation
+  -d, --double-space
+                    double space the output
+  -D, --date-format=FORMAT
+                    use FORMAT for the header date
+  -e[CHAR[WIDTH]], --expand-tabs[=CHAR[WIDTH]]
+                    expand input CHARs (TABs) to tab WIDTH (8)
+  -F, -f, --form-feed
+                    use form feeds instead of newlines to separate pages
+                    (by a 3-line page header with -F or a 5-line header
+                    and trailer without -F)
+  -h, --header=HEADER
+                    use a centered HEADER instead of filename in page header,
+                    -h "" prints a blank line, don't use -h""
+  -i[CHAR[WIDTH]], --output-tabs[=CHAR[WIDTH]]
+                    replace spaces with CHARs (TABs) to tab WIDTH (8)
+  -J, --join-lines  merge full lines, turns off -W line truncation, no column
+                    alignment, --sep-string[=STRING] sets separators
+  -l, --length=PAGE_LENGTH
+                    set the page length to PAGE_LENGTH (66) lines
+                    (default number of lines of text 56, and with -F 63).
+                    implies -t if PAGE_LENGTH <= 10
+  -m, --merge       print all files in parallel, one in each column,
+                    truncate lines, but join lines of full length with -J
+  -n[SEP[DIGITS]], --number-lines[=SEP[DIGITS]]
+                    number lines, use DIGITS (5) digits, then SEP (TAB),
+                    default counting starts with 1st line of input file
+  -N, --first-line-number=NUMBER
+                    start counting with NUMBER at 1st line of first
+                    page printed (see +FIRST_PAGE)
+  -o, --indent=MARGIN
+                    offset each line with MARGIN (zero) spaces, do not
+                    affect -w or -W, MARGIN will be added to PAGE_WIDTH
+  -r, --no-file-warnings
+                    omit warning when a file cannot be opened
+  -s[CHAR], --separator[=CHAR]
+                    separate columns by a single character, default for CHAR
+                    is the <TAB> character without -w and 'no char' with -w.
+                    -s[CHAR] turns off line truncation of all 3 column
+                    options (-COLUMN|-a -COLUMN|-m) except -w is set
+  -S[STRING], --sep-string[=STRING]
+                    separate columns by STRING,
+                    without -S: Default separator <TAB> with -J and <space>
+                    otherwise (same as -S" "), no effect on column options
+  -t, --omit-header  omit page headers and trailers;
+                     implied if PAGE_LENGTH <= 10
+  -T, --omit-pagination
+                    omit page headers and trailers, eliminate any pagination
+                    by form feeds set in input files
+  -v, --show-nonprinting
+                    use octal backslash notation
+  -w, --width=PAGE_WIDTH
+                    set page width to PAGE_WIDTH (72) characters for
+                    multiple text-column output only, -s[char] turns off (72)
+  -W, --page-width=PAGE_WIDTH
+                    set page width to PAGE_WIDTH (72) characters always,
+                    truncate lines, except -J option is set, no interference
+                    with -S or -s
+      --help     display this help and exit
+      --version  output version information and exit
+
+GNU coreutils online help: <https://www.gnu.org/software/coreutils/>
+Full documentation at: <https://www.gnu.org/software/coreutils/pr>
+or available locally via: info '(coreutils) pr invocation'
+student@j-hp:~/422161$ pr numbers.txt
+pr: numbers.txt: No such file or directory
+student@j-hp:~/422161$ pr number.txt
+
+
+2024-02-14 14:23                    number.txt                    Page 1
+
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+student@j-hp:~/422161$ pr -t number.txt
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+student@j-hp:~/422161$ pr -d number.txt
+
+
+2024-02-14 14:23                    number.txt                    Page 1
+
+
+1
+
+2
+
+3
+
+4
+
+5
+
+6
+
+7
+
+8
+
+9
+
+10
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+student@j-hp:~/422161$ pr --version
+pr (GNU coreutils) 8.30
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+Written by Pete TerMaat and Roland Huebner.
+student@j-hp:~/422161$ pr -a number.txt
+
+
+2024-02-14 14:23                    number.txt                    Page 1
+
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+student@j-hp:~/422161$ pr -c number.txt
+
+
+2024-02-14 14:23                    number.txt                    Page 1
+
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+student@j-hp:~/422161$ pr -J number.txt
+
+
+2024-02-14 14:23                    number.txt                    Page 1
+
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+student@j-hp:~/422161$ 
+student@j-hp:~/422161$ pr -3 number.txt
+
+
+2024-02-14 14:23                    number.txt                    Page 1
+
+
+1			5			8
+2			6			9
+3			7			10
+4
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+student@j-hp:~/422161$ cat>places.txt
+jaipur
+delhi
+mumbai
+kolkata
+jodhpur
+bhopal
+goa
+chennai
+heydrabad
+bangalore
+amritsar  
+patna
+surat   
+jaipur
+mumbai
+mumbai
+delhi
+Delhi
+Jaipur
+jaipur^C
+student@j-hp:~/422161$ cat places.txt
+jaipur
+delhi
+mumbai
+kolkata
+jodhpur
+bhopal
+goa
+chennai
+heydrabad
+bangalore
+amritsar
+patna
+surat
+jaipur
+mumbai
+mumbai
+delhi
+Delhi
+Jaipur
+student@j-hp:~/422161$ head --help
+Usage: head [OPTION]... [FILE]...
+Print the first 10 lines of each FILE to standard output.
+With more than one FILE, precede each with a header giving the file name.
+
+With no FILE, or when FILE is -, read standard input.
+
+Mandatory arguments to long options are mandatory for short options too.
+  -c, --bytes=[-]NUM       print the first NUM bytes of each file;
+                             with the leading '-', print all but the last
+                             NUM bytes of each file
+  -n, --lines=[-]NUM       print the first NUM lines instead of the first 10;
+                             with the leading '-', print all but the last
+                             NUM lines of each file
+  -q, --quiet, --silent    never print headers giving file names
+  -v, --verbose            always print headers giving file names
+  -z, --zero-terminated    line delimiter is NUL, not newline
+      --help     display this help and exit
+      --version  output version information and exit
+
+NUM may have a multiplier suffix:
+b 512, kB 1000, K 1024, MB 1000*1000, M 1024*1024,
+GB 1000*1000*1000, G 1024*1024*1024, and so on for T, P, E, Z, Y.
+
+GNU coreutils online help: <https://www.gnu.org/software/coreutils/>
+Full documentation at: <https://www.gnu.org/software/coreutils/head>
+or available locally via: info '(coreutils) head invocation'
+student@j-hp:~/422161$ head places.txt
+jaipur
+delhi
+mumbai
+kolkata
+jodhpur
+bhopal
+goa
+chennai
+heydrabad
+bangalore
+student@j-hp:~/422161$ head -n 3 places.txt
+jaipur
+delhi
+mumbai
+student@j-hp:~/422161$ head -c 27 places.txt
+jaipur
+delhi
+mumbai
+student@j-hp:~/422161$ head -v places.txt
+==> places.txt <==
+jaipur
+delhi
+mumbai
+kolkata
+jodhpur
+bhopal
+goa
+chennai
+heydrabad
+bangalore
+student@j-hp:~/422161$ head -q places.txt
+jaipur
+delhi
+mumbai
+kolkata
+jodhpur
+bhopal
+goa
+chennai
+heydrabad
+bangalore
+student@j-hp:~/422161$ head -v delhi places.txt
+head: cannot open 'delhi' for reading: No such file or directory
+==> places.txt <==
+jaipur
+delhi
+mumbai
+kolkata
+jodhpur
+bhopal
+goa
+chennai
+heydrabad
+bangalore
+student@j-hp:~/422161$ head places.txt number.txt
+==> places.txt <==
+jaipur
+delhi
+mumbai
+kolkata
+jodhpur
+bhopal
+goa
+chennai
+heydrabad
+bangalore
+
+==> number.txt <==
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+student@j-hp:~/422161$ #tail
+student@j-hp:~/422161$ tail --help
+Usage: tail [OPTION]... [FILE]...
+Print the last 10 lines of each FILE to standard output.
+With more than one FILE, precede each with a header giving the file name.
+
+With no FILE, or when FILE is -, read standard input.
+
+Mandatory arguments to long options are mandatory for short options too.
+  -c, --bytes=[+]NUM       output the last NUM bytes; or use -c +NUM to
+                             output starting with byte NUM of each file
+  -f, --follow[={name|descriptor}]
+                           output appended data as the file grows;
+                             an absent option argument means 'descriptor'
+  -F                       same as --follow=name --retry
+  -n, --lines=[+]NUM       output the last NUM lines, instead of the last 10;
+                             or use -n +NUM to output starting with line NUM
+      --max-unchanged-stats=N
+                           with --follow=name, reopen a FILE which has not
+                             changed size after N (default 5) iterations
+                             to see if it has been unlinked or renamed
+                             (this is the usual case of rotated log files);
+                             with inotify, this option is rarely useful
+      --pid=PID            with -f, terminate after process ID, PID dies
+  -q, --quiet, --silent    never output headers giving file names
+      --retry              keep trying to open a file if it is inaccessible
+  -s, --sleep-interval=N   with -f, sleep for approximately N seconds
+                             (default 1.0) between iterations;
+                             with inotify and --pid=P, check process P at
+                             least once every N seconds
+  -v, --verbose            always output headers giving file names
+  -z, --zero-terminated    line delimiter is NUL, not newline
+      --help     display this help and exit
+      --version  output version information and exit
+
+NUM may have a multiplier suffix:
+b 512, kB 1000, K 1024, MB 1000*1000, M 1024*1024,
+GB 1000*1000*1000, G 1024*1024*1024, and so on for T, P, E, Z, Y.
+
+With --follow (-f), tail defaults to following the file descriptor, which
+means that even if a tail'ed file is renamed, tail will continue to track
+its end.  This default behavior is not desirable when you really want to
+track the actual name of the file, not the file descriptor (e.g., log
+rotation).  Use --follow=name in that case.  That causes tail to track the
+named file in a way that accommodates renaming, removal and creation.
+
+GNU coreutils online help: <https://www.gnu.org/software/coreutils/>
+Full documentation at: <https://www.gnu.org/software/coreutils/tail>
+or available locally via: info '(coreutils) tail invocation'
+student@j-hp:~/422161$ tail +3 places.txt
+mumbai
+kolkata
+jodhpur
+bhopal
+goa
+chennai
+heydrabad
+bangalore
+amritsar
+patna
+surat
+jaipur
+mumbai
+mumbai
+delhi
+Delhi
+Jaipur
+student@j-hp:~/422161$ tail +5 places.txt
+jodhpur
+bhopal
+goa
+chennai
+heydrabad
+bangalore
+amritsar
+patna
+surat
+jaipur
+mumbai
+mumbai
+delhi
+Delhi
+Jaipur
+student@j-hp:~/422161$ tail -3 places.txt
+delhi
+Delhi
+Jaipur
+student@j-hp:~/422161$ tail +5 places.txt
+jodhpur
+bhopal
+goa
+chennai
+heydrabad
+bangalore
+amritsar
+patna
+surat
+jaipur
+mumbai
+mumbai
+delhi
+Delhi
+Jaipur
+student@j-hp:~/422161$ tail +25 places.txt
+student@j-hp:~/422161$ tail +25 places.txt
+student@j-hp:~/422161$ tail +2 places.txt
+delhi
+mumbai
+kolkata
+jodhpur
+bhopal
+goa
+chennai
+heydrabad
+bangalore
+amritsar
+patna
+surat
+jaipur
+mumbai
+mumbai
+delhi
+Delhi
+Jaipur
+student@j-hp:~/422161$ tail +9 places.txt
+heydrabad
+bangalore
+amritsar
+patna
+surat
+jaipur
+mumbai
+mumbai
+delhi
+Delhi
+Jaipur
+student@j-hp:~/422161$ tail +9 places.txt 
+heydrabad
+bangalore
+amritsar
+patna
+surat
+jaipur
+mumbai
+mumbai
+delhi
+Delhi
+Jaipur
+student@j-hp:~/422161$ tail -c 9 places.txt 
+i
+Jaipur
+student@j-hp:~/422161$ cat places.txt 
+jaipur
+delhi
+mumbai
+kolkata
+jodhpur
+bhopal
+goa
+chennai
+heydrabad
+bangalore
+amritsar
+patna
+surat
+jaipur
+mumbai
+mumbai
+delhi
+Delhi
+Jaipur
+student@j-hp:~/422161$ tail -c +241 places.txt 
+student@j-hp:~/422161$ tail -c +100 places.txt 
+pur
+mumbai
+mumbai
+delhi
+Delhi
+Jaipur
+student@j-hp:~/422161$ cat places.txt
+jaipur
+delhi
+mumbai
+kolkata
+jodhpur
+bhopal
+goa
+chennai
+heydrabad
+bangalore
+amritsar
+patna
+surat
+jaipur
+mumbai
+mumbai
+delhi
+Delhi
+Jaipur
+student@j-hp:~/422161$ tail number.txt places.txt
+==> number.txt <==
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+
+==> places.txt <==
+bangalore
+amritsar
+patna
+surat
+jaipur
+mumbai
+mumbai
+delhi
+Delhi
+Jaipur
+student@j-hp:~/422161$ tail number.txt q places.txt
+==> number.txt <==
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+tail: cannot open 'q' for reading: No such file or directory
+
+==> places.txt <==
+bangalore
+amritsar
+patna
+surat
+jaipur
+mumbai
+mumbai
+delhi
+Delhi
+Jaipur
+student@j-hp:~/422161$ tail number.txt -q places.txt
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+bangalore
+amritsar
+patna
+surat
+jaipur
+mumbai
+mumbai
+delhi
+Delhi
+Jaipur
+student@j-hp:~/422161$ tail -v number.txt
+==> number.txt <==
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+student@j-hp:~/422161$ tail --version
+tail (GNU coreutils) 8.30
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+Written by Paul Rubin, David MacKenzie, Ian Lance Taylor,
+and Jim Meyering.
+student@j-hp:~/422161$ cat>state.txt
+rajasthan
+UP
+Bihar
+ANDHRA pradesh
+Arunachal pradesh^C
+student@j-hp:~/422161$ cut state.txt 
+cut: you must specify a list of bytes, characters, or fields
+Try 'cut --help' for more information.
+student@j-hp:~/422161$ cut -b 1,2,3,4 state.txt 
+raja
+UP
+Biha
+ANDH
+student@j-hp:~/422161$ cut -b 1-4,7-9 state.txt 
+rajahan
+UP
+Biha
+ANDH pr
+student@j-hp:~/422161$ cut -b 1- number.txt 
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+student@j-hp:~/422161$ cut -b -3 number.txt 
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+student@j-hp:~/422161$ cut -b -3 state.txt 
+raj
+UP
+Bih
+AND
+student@j-hp:~/422161$ cut -b 2,5,8 state.txt 
+asa
+P
+ir
+NRp
+student@j-hp:~/422161$ cat state.txt 
+rajasthan
+UP
+Bihar
+ANDHRA pradesh
+student@j-hp:~/422161$ cut -c 2,5,8 state.txt 
+asa
+P
+ir
+NRp
+student@j-hp:~/422161$ paste number.txt state.txt 
+1	rajasthan
+2	UP
+3	Bihar
+4	ANDHRA pradesh
+5	
+6	
+7	
+8	
+9	
+10	
+student@j-hp:~/422161$ echo -e "Gujarat\nPunjab\nMaharashtra\nWest Bengal\nTamil Nadu\nAssam" state.txt
+Gujarat
+Punjab
+Maharashtra
+West Bengal
+Tamil Nadu
+Assam state.txt
+student@j-hp:~/422161$ echo -e "Gujarat\nPunjab\nMaharashtra\nWest Bengal\nTamil Nadu\nAssam" >>state.txt
+student@j-hp:~/422161$ cat state.txt 
+rajasthan
+UP
+Bihar
+ANDHRA pradesh
+Gujarat
+Punjab
+Maharashtra
+West Bengal
+Tamil Nadu
+Assam
+student@j-hp:~/422161$ paste number.txt state.txt 
+1	rajasthan
+2	UP
+3	Bihar
+4	ANDHRA pradesh
+5	Gujarat
+6	Punjab
+7	Maharashtra
+8	West Bengal
+9	Tamil Nadu
+10	Assam
+student@j-hp:~/422161$ paste -d "|" number.txt state.txt 
+1|rajasthan
+2|UP
+3|Bihar
+4|ANDHRA pradesh
+5|Gujarat
+6|Punjab
+7|Maharashtra
+8|West Bengal
+9|Tamil Nadu
+10|Assam
+student@j-hp:~/422161$ paste -d "||" number.txt state.txt number.txt 
+1|rajasthan|1
+2|UP|2
+3|Bihar|3
+4|ANDHRA pradesh|4
+5|Gujarat|5
+6|Punjab|6
+7|Maharashtra|7
+8|West Bengal|8
+9|Tamil Nadu|9
+10|Assam|10
+student@j-hp:~/422161$ paste -s number.txt state.txt 
+1	2	3	4	5	6	7	8	9	10
+rajasthan	UP	Bihar	ANDHRA pradesh	Gujarat	Punjab	Maharashtra	West Bengal	Tamil Nadu	Assam
+student@j-hp:~/422161$ paste -s -d ":"number.txt state.txt 
+rajasthan:UPnBiharuANDHRA pradeshmGujaratbPunjabeMaharashtrarWest Bengal.Tamil NadutAssam
+student@j-hp:~/422161$ paste -s -d ":" number.txt state.txt 
+1:2:3:4:5:6:7:8:9:10
+rajasthan:UP:Bihar:ANDHRA pradesh:Gujarat:Punjab:Maharashtra:West Bengal:Tamil Nadu:Assam
+student@j-hp:~/422161$ paste -s -d "  |  " number.txt state.txt 
+1 2 3|4 5 6 7 8|9 10
+rajasthan UP Bihar|ANDHRA pradesh Gujarat Punjab Maharashtra West Bengal|Tamil Nadu Assam
+student@j-hp:~/422161$ paste -version
+paste: invalid option -- 'v'
+Try 'paste --help' for more information.
+student@j-hp:~/422161$ paste --version
+paste (GNU coreutils) 8.30
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+Written by David M. Ihnat and David MacKenzie.
+student@j-hp:~/422161$ cat state.txt 
+rajasthan
+UP
+Bihar
+ANDHRA pradesh
+Gujarat
+Punjab
+Maharashtra
+West Bengal
+Tamil Nadu
+Assam
+student@j-hp:~/422161$ sort state.txt 
+ANDHRA pradesh
+Assam
+Bihar
+Gujarat
+Maharashtra
+Punjab
+rajasthan
+Tamil Nadu
+UP
+West Bengal
+student@j-hp:~/422161$ echo state.txt number.txt 
+state.txt number.txt
+student@j-hp:~/422161$ cat --help
+Usage: cat [OPTION]... [FILE]...
+Concatenate FILE(s) to standard output.
+
+With no FILE, or when FILE is -, read standard input.
+
+  -A, --show-all           equivalent to -vET
+  -b, --number-nonblank    number nonempty output lines, overrides -n
+  -e                       equivalent to -vE
+  -E, --show-ends          display $ at end of each line
+  -n, --number             number all output lines
+  -s, --squeeze-blank      suppress repeated empty output lines
+  -t                       equivalent to -vT
+  -T, --show-tabs          display TAB characters as ^I
+  -u                       (ignored)
+  -v, --show-nonprinting   use ^ and M- notation, except for LFD and TAB
+      --help     display this help and exit
+      --version  output version information and exit
+
+Examples:
+  cat f - g  Output f's contents, then standard input, then g's contents.
+  cat        Copy standard input to standard output.
+
+GNU coreutils online help: <https://www.gnu.org/software/coreutils/>
+Full documentation at: <https://www.gnu.org/software/coreutils/cat>
+or available locally via: info '(coreutils) cat invocation'
+student@j-hp:~/422161$ cat sort state.txt>>sorted.txt
+cat: sort: No such file or directory
+student@j-hp:~/422161$ sort s
+sorted.txt  state.txt   
+student@j-hp:~/422161$ sort s
+sorted.txt  state.txt   
+student@j-hp:~/422161$ sort state.txt | cat>>sorted.txt
+student@j-hp:~/422161$ cat sorted.txt 
+rajasthan
+UP
+Bihar
+ANDHRA pradesh
+Gujarat
+Punjab
+Maharashtra
+West Bengal
+Tamil Nadu
+Assam
+ANDHRA pradesh
+Assam
+Bihar
+Gujarat
+Maharashtra
+Punjab
+rajasthan
+Tamil Nadu
+UP
+West Bengal
+student@j-hp:~/422161$ sort state.txt | cat>>sorted.txt
+student@j-hp:~/422161$ sort -r state.txt 
+West Bengal
+UP
+Tamil Nadu
+rajasthan
+Punjab
+Maharashtra
+Gujarat
+Bihar
+Assam
+ANDHRA pradesh
+student@j-hp:~/422161$ ls
+DBMS  number.txt  places.txt  sorted.txt  state.txt
+student@j-hp:~/422161$ place
+place: command not found
+student@j-hp:~/422161$ echo places.txt 
+places.txt
+student@j-hp:~/422161$ cat places.txt 
+jaipur
+delhi
+mumbai
+kolkata
+jodhpur
+bhopal
+goa
+chennai
+heydrabad
+bangalore
+amritsar
+patna
+surat
+jaipur
+mumbai
+mumbai
+delhi
+Delhi
+Jaipur
+student@j-hp:~/422161$ uniq places.txt 
+jaipur
+delhi
+mumbai
+kolkata
+jodhpur
+bhopal
+goa
+chennai
+heydrabad
+bangalore
+amritsar
+patna
+surat
+jaipur
+mumbai
+delhi
+Delhi
+Jaipur
+student@j-hp:~/422161$ sort places.txt | cat>>sorted_place.txt
+student@j-hp:~/422161$ cat sorted_place.txt 
+amritsar
+bangalore
+bhopal
+chennai
+delhi
+delhi
+Delhi
+goa
+heydrabad
+jaipur
+jaipur
+Jaipur
+jodhpur
+kolkata
+mumbai
+mumbai
+mumbai
+patna
+surat
+student@j-hp:~/422161$ uniq sorted_place.txt 
+amritsar
+bangalore
+bhopal
+chennai
+delhi
+Delhi
+goa
+heydrabad
+jaipur
+Jaipur
+jodhpur
+kolkata
+mumbai
+patna
+surat
+student@j-hp:~/422161$ uniq -c sorted_place.txt 
+      1 amritsar
+      1 bangalore
+      1 bhopal
+      1 chennai
+      2 delhi
+      1 Delhi
+      1 goa
+      1 heydrabad
+      2 jaipur
+      1 Jaipur
+      1 jodhpur
+      1 kolkata
+      3 mumbai
+      1 patna
+      1 surat
+student@j-hp:~/422161$ uniq -d sorted_place.txt 
+delhi
+jaipur
+mumbai
+student@j-hp:~/422161$ uniq -u sorted_place.txt 
+amritsar
+bangalore
+bhopal
+chennai
+Delhi
+goa
+heydrabad
+Jaipur
+jodhpur
+kolkata
+patna
+surat
+student@j-hp:~/422161$ uniq -D sorted_place.txt 
+delhi
+delhi
+jaipur
+jaipur
+mumbai
+mumbai
+mumbai
+student@j-hp:~/422161$ cat places.txt | tr [a-z] [A-Z]
+JAIPUR
+DELHI
+MUMBAI
+KOLKATA
+JODHPUR
+BHOPAL
+GOA
+CHENNAI
+HEYDRABAD
+BANGALORE
+AMRITSAR
+PATNA
+SURAT
+JAIPUR
+MUMBAI
+MUMBAI
+DELHI
+DELHI
+JAIPUR
+student@j-hp:~/422161$ cat places.txt | tr [a-z] [A-Z] |cat>>capitalised.txt
+student@j-hp:~/422161$ cat capitalised.txt 
+JAIPUR
+DELHI
+MUMBAI
+KOLKATA
+JODHPUR
+BHOPAL
+GOA
+CHENNAI
+HEYDRABAD
+BANGALORE
+AMRITSAR
+PATNA
+SURAT
+JAIPUR
+MUMBAI
+MUMBAI
+DELHI
+DELHI
+JAIPUR
+student@j-hp:~/422161$ cat places.txt 
+jaipur
+delhi
+mumbai
+kolkata
+jodhpur
+bhopal
+goa
+chennai
+heydrabad
+bangalore
+amritsar
+patna
+surat
+jaipur
+mumbai
+mumbai
+delhi
+Delhi
+Jaipur
+student@j-hp:~/422161$ paste -d "|" places.txt capitalised.txt 
+jaipur|JAIPUR
+delhi|DELHI
+mumbai|MUMBAI
+kolkata|KOLKATA
+jodhpur|JODHPUR
+bhopal|BHOPAL
+goa|GOA
+chennai|CHENNAI
+heydrabad|HEYDRABAD
+bangalore|BANGALORE
+amritsar|AMRITSAR
+patna|PATNA
+surat|SURAT
+jaipur|JAIPUR
+mumbai|MUMBAI
+mumbai|MUMBAI
+delhi|DELHI
+Delhi|DELHI
+Jaipur|JAIPUR
+student@j-hp:~/422161$ echo "hey !! myself Jitendra"| tr -d hey
+echo "hey paste -d "|" places.txt capitalised.txt  myself Jitendra"| tr -d hey
+ places.txt capitalised.txt  myself Jitendra: command not found
+student@j-hp:~/422161$ echo "hey !! myself Jitendra"| tr -d hey
+echo "hey echo "hey paste -d "|" places.txt capitalised.txt  myself Jitendra"| tr -d hey myself Jitendra"| tr -d hey
+ co  past -d | placs.txt capitalisd.txt mslf Jitndra| tr -d  mslf Jitndra
+student@j-hp:~/422161$ 
+student@j-hp:~/422161$ 
+student@j-hp:~/422161$ 
+student@j-hp:~/422161$ 
+student@j-hp:~/422161$ 
+student@j-hp:~/422161$ echo "hey !! myself JITENDRA PACHAR" | tr -d hey
+echo "hey echo "hey echo "hey paste -d "|" places.txt capitalised.txt  myself Jitendra"| tr -d hey myself Jitendra"| tr -d hey myself JITENDRA PACHAR" | tr -d hey
+tr: extra operand ‘myself’
+Try 'tr --help' for more information.
+ places.txt capitalised.txt  myself Jitendra: command not found
+student@j-hp:~/422161$ 
+student@j-hp:~/422161$ echo ^V
+
+student@j-hp:~/422161$ echo "hey !! myself JITENDRA PACHAR" | tr -d hey
+echo "hey echo  myself JITENDRA PACHAR" | tr -d hey
+ co  mslf JITENDRA PACHAR
+student@j-hp:~/422161$ echo "hey myself JITENDRA PACHAR" | tr -d hey
+ mslf JITENDRA PACHAR
+student@j-hp:~/422161$ cat>>sample.txt
+unix is great os. unix was developed in Bell labs.
+
+learn operating system.
+
+Unix linux which one you choose.
+
+uNix is easy to learn.unix is a multiuser os.Learn unix .unix is a powerful.
+
+.^C
+student@j-hp:~/422161$ cat sample.txt 
+unix is great os. unix was developed in Bell labs.
+
+learn operating system.
+
+Unix linux which one you choose.
+
+uNix is easy to learn.unix is a multiuser os.Learn unix .unix is a powerful.
+
+.student@j-hp:~/422161$ grep -i "eat" sample.txt 
+unix is great os. unix was developed in Bell labs.
+student@j-hp:~/422161$ grep -c "eat" sample.txt 
+1
+student@j-hp:~/422161$ grep -l "ra" state.txt places.txt sample.txt 
+state.txt
+places.txt
+sample.txt
+student@j-hp:~/422161$ grep -w "eat" sample.txt 
+student@j-hp:~/422161$ grep -w "unix" sample.txt 
+unix is great os. unix was developed in Bell labs.
+uNix is easy to learn.unix is a multiuser os.Learn unix .unix is a powerful.
+student@j-hp:~/422161$ grep -0 "unix" sample.txt 
+unix is great os. unix was developed in Bell labs.
+--
+uNix is easy to learn.unix is a multiuser os.Learn unix .unix is a powerful.
+student@j-hp:~/422161$ grep -o "unix" sample.txt 
+unix
+unix
+unix
+unix
+unix
+student@j-hp:~/422161$ grep -n "unix" sample.txt 
+1:unix is great os. unix was developed in Bell labs.
+7:uNix is easy to learn.unix is a multiuser os.Learn unix .unix is a powerful.
+student@j-hp:~/422161$ grep -v "unix" sample.txt 
+
+learn operating system.
+
+Unix linux which one you choose.
+
+
+.
+student@j-hp:~/422161$ grep --help
+Usage: grep [OPTION]... PATTERNS [FILE]...
+Search for PATTERNS in each FILE.
+Example: grep -i 'hello world' menu.h main.c
+PATTERNS can contain multiple patterns separated by newlines.
+
+Pattern selection and interpretation:
+  -E, --extended-regexp     PATTERNS are extended regular expressions
+  -F, --fixed-strings       PATTERNS are strings
+  -G, --basic-regexp        PATTERNS are basic regular expressions
+  -P, --perl-regexp         PATTERNS are Perl regular expressions
+  -e, --regexp=PATTERNS     use PATTERNS for matching
+  -f, --file=FILE           take PATTERNS from FILE
+  -i, --ignore-case         ignore case distinctions in patterns and data
+      --no-ignore-case      do not ignore case distinctions (default)
+  -w, --word-regexp         match only whole words
+  -x, --line-regexp         match only whole lines
+  -z, --null-data           a data line ends in 0 byte, not newline
+
+Miscellaneous:
+  -s, --no-messages         suppress error messages
+  -v, --invert-match        select non-matching lines
+  -V, --version             display version information and exit
+      --help                display this help text and exit
+
+Output control:
+  -m, --max-count=NUM       stop after NUM selected lines
+  -b, --byte-offset         print the byte offset with output lines
+  -n, --line-number         print line number with output lines
+      --line-buffered       flush output on every line
+  -H, --with-filename       print file name with output lines
+  -h, --no-filename         suppress the file name prefix on output
+      --label=LABEL         use LABEL as the standard input file name prefix
+  -o, --only-matching       show only nonempty parts of lines that match
+  -q, --quiet, --silent     suppress all normal output
+      --binary-files=TYPE   assume that binary files are TYPE;
+                            TYPE is 'binary', 'text', or 'without-match'
+  -a, --text                equivalent to --binary-files=text
+  -I                        equivalent to --binary-files=without-match
+  -d, --directories=ACTION  how to handle directories;
+                            ACTION is 'read', 'recurse', or 'skip'
+  -D, --devices=ACTION      how to handle devices, FIFOs and sockets;
+                            ACTION is 'read' or 'skip'
+  -r, --recursive           like --directories=recurse
+  -R, --dereference-recursive  likewise, but follow all symlinks
+      --include=GLOB        search only files that match GLOB (a file pattern)
+      --exclude=GLOB        skip files that match GLOB
+      --exclude-from=FILE   skip files that match any file pattern from FILE
+      --exclude-dir=GLOB    skip directories that match GLOB
+  -L, --files-without-match  print only names of FILEs with no selected lines
+  -l, --files-with-matches  print only names of FILEs with selected lines
+  -c, --count               print only a count of selected lines per FILE
+  -T, --initial-tab         make tabs line up (if needed)
+  -Z, --null                print 0 byte after FILE name
+
+Context control:
+  -B, --before-context=NUM  print NUM lines of leading context
+  -A, --after-context=NUM   print NUM lines of trailing context
+  -C, --context=NUM         print NUM lines of output context
+  -NUM                      same as --context=NUM
+      --color[=WHEN],
+      --colour[=WHEN]       use markers to highlight the matching strings;
+                            WHEN is 'always', 'never', or 'auto'
+  -U, --binary              do not strip CR characters at EOL (MSDOS/Windows)
+
+When FILE is '-', read standard input.  With no FILE, read '.' if
+recursive, '-' otherwise.  With fewer than two FILEs, assume -h.
+Exit status is 0 if any line (or file if -L) is selected, 1 otherwise;
+if any error occurs and -q is not given, the exit status is 2.
+
+Report bugs to: bug-grep@gnu.org
+GNU grep home page: <http://www.gnu.org/software/grep/>
+General help using GNU software: <https://www.gnu.org/gethelp/>
+student@j-hp:~/422161$ 
+
+
